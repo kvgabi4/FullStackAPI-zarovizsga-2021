@@ -13,10 +13,13 @@ import { CarService } from 'src/app/service/car.service';
 })
 export class CarEditComponent implements OnInit {
 
-  car: Car = new Car();
+  car$: Observable<Car> = this.ar.params.pipe(
+    switchMap( params => this.carService.get(params.id) )
+  );
 
   constructor(
     private carService: CarService,
+    private ar: ActivatedRoute,
     private router: Router,
   ) { }
 
@@ -24,9 +27,9 @@ export class CarEditComponent implements OnInit {
   }
 
   onSave(ngForm: NgForm): void {
-    this.carService.create(ngForm.value).subscribe(
-      car => this.router.navigate(['/', 'cars']),
-      err => console.error(err)
+      this.carService.update(ngForm.value).subscribe(
+        car => this.router.navigate(['/', 'cars']),
+        err => console.error(err)
     );
   }
 
