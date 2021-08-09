@@ -2,7 +2,7 @@ const express = require('express');
 const createError = require('http-errors');
 
 const Model = require('../../models/race.model');
-const race = require('./race');
+const race = require('./service');
 
 // Create a new race.
 exports.create = (req, res, next) => {
