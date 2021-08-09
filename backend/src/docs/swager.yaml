@@ -173,7 +173,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Car'
+                $ref: '#/components/schemas/Race'
         '400':
           description: Invalid request when the post data is invalid
           content:
