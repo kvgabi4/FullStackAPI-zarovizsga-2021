@@ -1,4 +1,4 @@
-const Model = require('../../models/race.model');
+const Model = require('../../models/service.model');
 
 exports.create = requestData => {
     const entity = new Model(requestData);
