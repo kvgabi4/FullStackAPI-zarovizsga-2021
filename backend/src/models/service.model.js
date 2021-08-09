@@ -30,7 +30,6 @@ const ServiceSchema = mongoose.Schema({
 
 module.exports = mongoose.model('service', ServiceSchema);
 
-
 // export class Service {
 //   _id: string = '';
 //   name: string = '';
